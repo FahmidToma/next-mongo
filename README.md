@@ -1,6 +1,6 @@
 ## First NextJs Project
-**Mongodb-Mongoose/**
-**TypeScript**
+**Mongodb-Mongoose/-**
+**TypeScript/-**
 **CRUD operation**
 
 ## Getting Started
