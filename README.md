@@ -1,5 +1,5 @@
 ## First NextJs Project
-**Mongodb-Mongoose**
+**Mongodb-Mongoose/**
 **TypeScript**
 **CRUD operation**
 
