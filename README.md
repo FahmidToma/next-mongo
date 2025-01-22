@@ -1,4 +1,4 @@
-# First NextJs Project
+## First NextJs Project
 **Mongodb-Mongoose**
 **TypeScript**
 **CRUD operation**
