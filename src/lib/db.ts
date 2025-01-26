@@ -18,7 +18,7 @@ if (!MONGODB_URI) {
 }
 
 let cached = global.mongoose as { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null };
-console.log(cached);
+console.log("cache exists");
 
 if (!cached) {
     cached = global.mongoose = { conn: null, promise: null }

@@ -1,6 +1,8 @@
 ## First NextJs Project
 * Mongodb-Mongoose
+ - database
 * TypeScript
+ - language
 * CRUD operation
 
 ## Getting Started
