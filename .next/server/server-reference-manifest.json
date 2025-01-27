@@ -1,83 +1,91 @@
 {
   "node": {
-    "00946b34d7f7957a08c3ca791792cef390597649b5": {
+    "002c8559a9d27009b0c10dd37bd6764a9b36f6d868": {
       "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/update/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/page": "action-browser",
-        "app/update/[id]/page": "action-browser"
+        "app/folder/page": "action-browser"
+      }
+    },
+    "00946b34d7f7957a08c3ca791792cef390597649b5": {
+      "workers": {
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/folder/page": "action-browser"
       }
     },
     "408b2271f892549c4949982bfebdeeb966f3d5adae": {
       "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/update/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/page": "action-browser",
-        "app/update/[id]/page": "action-browser"
+        "app/folder/page": "action-browser"
+      }
+    },
+    "4097a97b84d8ab9351d710abbd1e477a3563d3badf": {
+      "workers": {
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/folder/page": "action-browser"
       }
     },
     "40a0fa21bfd4a639b4e5a358bcb054968baa4829f1": {
       "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/update/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/page": "action-browser",
-        "app/update/[id]/page": "action-browser"
+        "app/folder/page": "action-browser"
       }
     },
     "40f41ae83c2b2b319802ac215ef41fd33d27d9ee2a": {
       "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/update/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/page": "action-browser",
-        "app/update/[id]/page": "action-browser"
+        "app/folder/page": "action-browser"
       }
     },
     "604c36cc0fcd303e9c3e4993dfe702314455c226ba": {
       "workers": {
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/update/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%5D%5D%5D&__client_imported__=true!",
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/page": "action-browser",
-        "app/update/[id]/page": "action-browser"
+        "app/folder/page": "action-browser"
+      }
+    },
+    "60a56611e7a12f63d9aa97d9d83dc080a1ca04d14a": {
+      "workers": {
+        "app/folder/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjects%5C%5Cnext-mongo%5C%5Cnextjs-mongodb%5C%5Csrc%5C%5Clib%5C%5CserverActions.ts%22%2C%5B%5B%22002c8559a9d27009b0c10dd37bd6764a9b36f6d868%22%2C%22getFolders%22%5D%2C%5B%2200946b34d7f7957a08c3ca791792cef390597649b5%22%2C%22getPosts%22%5D%2C%5B%22408b2271f892549c4949982bfebdeeb966f3d5adae%22%2C%22createPosts%22%5D%2C%5B%224097a97b84d8ab9351d710abbd1e477a3563d3badf%22%2C%22deleteFolder%22%5D%2C%5B%2240a0fa21bfd4a639b4e5a358bcb054968baa4829f1%22%2C%22deletePost%22%5D%2C%5B%2240f41ae83c2b2b319802ac215ef41fd33d27d9ee2a%22%2C%22getSinglePost%22%5D%2C%5B%22604c36cc0fcd303e9c3e4993dfe702314455c226ba%22%2C%22updateSinglePost%22%5D%2C%5B%2260a56611e7a12f63d9aa97d9d83dc080a1ca04d14a%22%2C%22createFolder%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/folder/page": "action-browser"
       }
     }
   },

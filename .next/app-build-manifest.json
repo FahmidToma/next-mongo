@@ -6,15 +6,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/page": [
+    "/folder/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/update/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/update/[id]/page.js"
+      "static/chunks/app/folder/page.js"
     ]
   }
 }

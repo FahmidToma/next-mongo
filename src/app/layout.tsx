@@ -31,6 +31,9 @@ export default function RootLayout({
         <div  className="h-screen">
         {children}
         </div>
+        <div id='modal'>
+
+        </div>
       </body>
     </html>
   );
