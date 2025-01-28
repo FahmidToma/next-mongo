@@ -34,6 +34,7 @@ export async function getFolders() {
         console.log("Successfully got folders----server",plainFolders);
         return plainFolders;
     } catch(error) {
+        console.log(error);
         throw new Error("Failed to fetch folders");
     }
     
@@ -104,6 +105,6 @@ export async function deletePost(id: string) {
 
 export async function deleteFolder(id: string){
     await dbConnect();
-    const deleteaFolder= await Folder.findByIdAndDelete(id);
-    return JSON.parse(JSON.stringify(deleteaFolder));
+    const deleteAFolder= await Folder.findByIdAndDelete(id);
+    return JSON.parse(JSON.stringify(deleteAFolder));
 }
