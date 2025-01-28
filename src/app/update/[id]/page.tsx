@@ -1,7 +1,7 @@
 'use client'
-import { Post } from "@/app/page";
+//import { Post } from "@/app/page";
 import { getSinglePost, updateSinglePost } from "@/lib/serverActions";
-import Link from "next/link";
+//import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { ChangeEvent, FormEvent, useState, useEffect } from "react";
@@ -11,7 +11,7 @@ export default function UpdatePost({ params }: { params: Promise<{ id: string }>
     const { id } = React.use(params);
     const router = useRouter();
 
-    const [post, setPost] = useState<Post | null>(null);
+   // const [post, setPost] = useState<Post | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | undefined>();
 
@@ -50,16 +50,21 @@ export default function UpdatePost({ params }: { params: Promise<{ id: string }>
 
     const getPost= async(id: string)=>{
         const singlePost=await getSinglePost(id);
-        setLoading(false);
-        setTitle(singlePost.title);
-        setDetail(singlePost.detail);
-        setAuthor(singlePost.author);
-        setAge(singlePost.age);
+        if(singlePost){
+            setLoading(false);
+            setTitle(singlePost.title);
+            setDetail(singlePost.detail);
+            setAuthor(singlePost.author);
+            setAge(singlePost.age);
+        } else {
+            setError("Your post was not found");
+        }
+        
     }
 
     useEffect(()=>{
         getPost(id);
-    },[]);
+    },);
 
 
 

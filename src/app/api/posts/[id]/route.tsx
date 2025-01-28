@@ -3,7 +3,7 @@ import dbConnect from '../../../../lib/db';
 import Posts from '../../../../model/posts';
 
 
-export async function GET(req:Request, {params}:{params: {id: string }}) {
+export async function GET(req:Request, {params}:{params: Promise<{id: string }>}) {
 
     const {id} = await params;
 
@@ -30,8 +30,8 @@ export async function GET(req:Request, {params}:{params: {id: string }}) {
     }
   }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-    const { id } =  params; // Get the ID from the URL
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params; // Get the ID from the URL
     try {
         // Connect to the database
         await dbConnect();
@@ -54,8 +54,8 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 }
 
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
-    const { id } = params; // Get the ID from the URL
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+    const { id } =  await params; // Get the ID from the URL
     try {
         // Connect to the database
         await dbConnect();
