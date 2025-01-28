@@ -3,17 +3,17 @@ import Modal from 'react-modal';
 
 
 
-const customStyles = {
-  content: {
-    top: '37%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '25%',
-  },
-};
+//const customStyles = {
+//  content: {
+//    top: '37%',
+//    left: '50%',
+//    right: 'auto',
+//    bottom: 'auto',
+//    marginRight: '-50%',
+//    transform: 'translate(-50%, -50%)',
+//    width: '25%',
+//  },
+//};
 
 
 
@@ -38,7 +38,7 @@ const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onRequestClose, folde
       ariaHideApp={false}
     >
       <div className='w-11/12 bg-slate-300 top-20 max-w-md mx-auto md:max-w-lg  p-3 md:p-4'>
-      <h2 className="mb-3">Add Folder  '{folderName}'</h2> 
+      <h2 className="mb-3">Add Folder  {`&{folderName}`}</h2> 
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
         <input
           type="text"

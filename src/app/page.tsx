@@ -22,7 +22,7 @@ export default function Home() {
   const [detail, setDetail] = useState<string>('');
   const [author, setAuthor] = useState<string>('');
   const [age, setAge] = useState<string>('');
-  const [status, setStatus] = useState<string | undefined>();
+ // const [status, setStatus] = useState<string | undefined>();
 
   // Fetching all posts
 
@@ -50,8 +50,14 @@ export default function Home() {
     const fetchData= async()=> {
       console.log("going to fetch data---client");
       const posts = await getPosts(); // Server Action
-      setPosts(posts);
-      setLoading(false);
+      if(posts){
+        setPosts(posts);
+        setLoading(false);
+      }
+      else {
+        setError("There is no post to fetch");
+      }
+      
       console.log("fetched the data", posts);
     }
 
