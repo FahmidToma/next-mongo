@@ -265,7 +265,7 @@ export default function Home() {
           Add Post
         </button>
       </form>
-      {status && <p>{status}</p>}
+      
     </div>
   );
 }

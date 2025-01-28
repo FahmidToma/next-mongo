@@ -1,58 +1,44 @@
 
-import mongoose from 'mongoose';
-import dotenv from "dotenv";
-
-dotenv.config();
+import mongoose from "mongoose";
 declare global {
-    var mongoose: {
-        conn: mongoose.Connection | null;
-        promise: Promise<typeof mongoose> | null;
-    };
+  // eslint-disable-next-line no-var, @typescript-eslint/no-explicit-any
+  var mongoose: any; // This must be a `var` and not a `let / const`
 }
 
-const MONGODB_URI = process.env.MONGO_URI as string;
-console.log(MONGODB_URI);
-
-if (!MONGODB_URI) {
-    throw new Error('Mongodb uri is not defined');
-}
-
-let cached = global.mongoose as { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null };
-console.log("cache exists");
+let cached = global.mongoose;
 
 if (!cached) {
-    cached = global.mongoose = { conn: null, promise: null }
+  cached = global.mongoose = { conn: null, promise: null };
 }
 
-async function dbConnect(): Promise<typeof mongoose> {
-    if (cached.conn) {
-        return cached.conn;
-    }
-    if (!cached.promise) {
-        const opts = {
-            bufferCommands: false,
-        }
-        cached.promise = mongoose.connect(MONGODB_URI, opts).then(mongoose => {
-            console.log('Db connected')
-            return mongoose
-        })
-    }
+async function dbConnect() {
+  const MONGODB_URI = process.env.MONGO_URI!;
 
-    try {
-        cached.conn = await cached.promise;
+  if (!MONGODB_URI) {
+    throw new Error(
+      "Please define the MONGODB_URI environment variable inside .env.local"
+    );
+  }
 
-    } catch (e) {
-        cached.promise = null;
-
-        if (e instanceof Error) {
-            console.error('Database connection error', e.message);
-        } else {
-            console.error("Unknown error during database connection");
-        }
-
-       throw e;
-    }
+  if (cached.conn) {
     return cached.conn;
+  }
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+      return mongoose;
+    });
+  }
+  try {
+    cached.conn = await cached.promise;
+  } catch (e) {
+    cached.promise = null;
+    throw e;
+  }
+
+  return cached.conn;
 }
 
-    export default dbConnect;
+export default dbConnect;

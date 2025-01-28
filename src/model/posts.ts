@@ -3,10 +3,10 @@ import mongoose ,{Document, Model, Schema} from 'mongoose';
 //interface for user document
 interface IPost extends Document {
 
-    title: String,
-    detail: String,
-    author: String,
-    age: String,
+    title: string,
+    detail: string,
+    author: string,
+    age: string,
 }
 
 //schema for user model
