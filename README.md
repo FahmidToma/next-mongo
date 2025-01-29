@@ -1,9 +1,9 @@
 ## First NextJs Project
 * Mongodb-Mongoose
- - database
 * TypeScript
- - language
 * CRUD operation
+* Ant Design
+* Tailwind CSS
 
 ## Getting Started
 

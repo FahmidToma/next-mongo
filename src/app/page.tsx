@@ -111,7 +111,7 @@ export default function Home() {
         onSubmit={handleSubmit}
         className="bg-slate-400 flex flex-col gap-5 items-center p-10 text-black" 
       >
-        <div className="space-x-7">
+        <div className="space-y-1 md:space-x-7 sm:space-x-2">
           <input
             type="text"
             name="title"
@@ -129,7 +129,7 @@ export default function Home() {
             onChange={handleChange}
           />
         </div>
-        <div className="space-x-7">
+        <div className="space-y-1 md:space-x-7 sm:space-x-2">
           <input
             type="text"
             name="author"
