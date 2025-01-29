@@ -1,9 +1,10 @@
 ## First NextJs Project
-* Mongodb-Mongoose
- - database
-* TypeScript
- - language
-* CRUD operation
+
+- Mongodb-Mongoose
+- TypeScript
+- CRUD operation
+- Ant Design
+- Tailwind CSS
 
 ## Getting Started
 
@@ -18,7 +19,3 @@ pnpm dev
 # or
 bun dev
 ```
-
-
-
-
