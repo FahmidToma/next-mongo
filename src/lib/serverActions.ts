@@ -9,11 +9,8 @@ export async function getPosts() {
 
     try {
         await dbConnect();
-        console.log("going to fetch data---server");
         const posts = await Posts.find();
         const plainPosts = JSON.parse(JSON.stringify(posts));
-        console.log('fetched successfully',posts);
-        console.log(plainPosts);
         return plainPosts;
 
     } catch(error) {
@@ -31,7 +28,6 @@ export async function getFolders() {
         await dbConnect();
         const folders= await Folder.find();
         const plainFolders = JSON.parse(JSON.stringify(folders));
-        console.log("Successfully got folders----server",plainFolders);
         return plainFolders;
     } catch(error) {
         console.log(error);
@@ -45,7 +41,6 @@ export async function createPosts(data: { title: string, detail: string, author:
 
     await dbConnect();
     const newPost = await Posts.create(data);
-    console.log("Just created new post",newPost);
     const createPost = JSON.parse(JSON.stringify(newPost));
     console.log(createPost);
     return createPost;
@@ -57,16 +52,7 @@ export async function createFolder(name: string, parentId: string | null) {
 
     try {
         await dbConnect();
-        console.log("Trying to create folder");
-
-        const rootFolder = await Folder.findOne({parent: null});
-        console.log(rootFolder);
-
-        
-         const   folder = await Folder.create({name, parent: parentId || null});
-        
-        
-        console.log("Just created Folder", folder);
+        const   folder = await Folder.create({name, parent: parentId || null});
         const createdFolder= JSON.parse(JSON.stringify(folder));
         return createdFolder;
 
@@ -88,9 +74,7 @@ export async function getSinglePost(id: string) {
 //for updating a single post
 export async function updateSinglePost(id: string, data: { title: string, detail: string, author: string, age: string }) {
     await dbConnect();
-    console.log("going to update post---server");
     const updatedPost = await Posts.findByIdAndUpdate(id, data, { new: true, runValidators: true });
-    console.log("Post updated successfully----server", updatedPost);
     return updatedPost ? JSON.parse(JSON.stringify(updatedPost)) : null;
 }
 
