@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 declare global {
   // eslint-disable-next-line no-var, @typescript-eslint/no-explicit-any
@@ -16,7 +15,7 @@ async function dbConnect() {
 
   if (!MONGODB_URI) {
     throw new Error(
-      "Please define the MONGODB_URI environment variable inside .env.local"
+      "Please define the MONGODB_URI environment variable inside .env.local",
     );
   }
 
