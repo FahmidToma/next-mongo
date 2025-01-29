@@ -3,6 +3,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState, useEffect } from "react";
 import { getSinglePost, updateSinglePost } from "@/lib/serverActions";
+import { Form } from "@/app/page";
 
 export default function UpdatePost({ params }: { params: Promise<{ id: string }> }) {
 
@@ -11,10 +12,7 @@ export default function UpdatePost({ params }: { params: Promise<{ id: string }>
 
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | undefined>();
-    const [title, setTitle] = useState<string>('');
-    const [detail, setDetail] = useState<string>('');
-    const [author, setAuthor] = useState<string>('');
-    const [age, setAge] = useState<string>('');
+    const [formInfos, setFormInfos] =useState<Form>({title:'',detail:'',author:'',age:''});
 
     //fetching single post using server-action
     useEffect(()=>{
@@ -23,10 +21,7 @@ export default function UpdatePost({ params }: { params: Promise<{ id: string }>
                 const singlePost = await getSinglePost(id);
                 if (singlePost) {
                     setLoading(false);
-                    setTitle(singlePost.title);
-                    setDetail(singlePost.detail);
-                    setAuthor(singlePost.author);
-                    setAge(singlePost.age);
+                    setFormInfos(singlePost);
                 } else {
                     setError("Your post was not found");
                 }
@@ -40,12 +35,20 @@ export default function UpdatePost({ params }: { params: Promise<{ id: string }>
         getPost();
     },[id]);
 
+    //handle onChange
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) =>{
+        const {name, value} = e.target;
+        setFormInfos((prev)=>({
+          ...prev,
+          [name]: value,
+        }));
+    }
+
     // Handling updated posts
     const handleSave = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const updatedPostData = { title, detail, author, age };
-            await updateSinglePost(id,updatedPostData);
+            await updateSinglePost(id,formInfos);
             router.push('/');
         } catch {
             setError("Couldn't update post");
@@ -72,16 +75,16 @@ export default function UpdatePost({ params }: { params: Promise<{ id: string }>
                     name="title"
                     placeholder="Title here"
                     className="w-72 p-2 h-10"
-                    value={title}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>setTitle(e.target.value)}
+                    value={formInfos.title}
+                    onChange={handleChange}
                 />
                 <input
                     type="text"
-                    name="description"
+                    name="detail"
                     placeholder="Description"
                     className="w-72 p-2 h-10"
-                    value={detail}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => setDetail(e.target.value)}
+                    value={formInfos.detail}
+                    onChange={handleChange}
                 />
             </div>
             <div className="space-x-7">
@@ -90,16 +93,16 @@ export default function UpdatePost({ params }: { params: Promise<{ id: string }>
                     name="author"
                     placeholder="Author name"
                     className="w-72 p-2 h-10"
-                    value={author}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => setAuthor(e.target.value)}
+                    value={formInfos.author}
+                    onChange={handleChange}
                 />
                 <input
                     type="text"
                     name="age"
                     placeholder="Author age"
                     className="w-72 p-2 h-10"
-                    value={age}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => setAge(e.target.value)}
+                    value={formInfos.age}
+                    onChange={handleChange}
                 />
             </div>
             <button

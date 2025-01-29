@@ -11,15 +11,19 @@ export interface Post {
   author: string;
   age: string;
 }
+export interface Form {
+  title: string;
+  detail: string;
+  author: string;
+  age: string;
+}
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | undefined>();
-  const [title, setTitle] = useState<string>("");
-  const [detail, setDetail] = useState<string>("");
-  const [author, setAuthor] = useState<string>("");
-  const [age, setAge] = useState<string>("");
+  const [formInfo, setFormInfo] = useState<Form>({title:'',detail:'',author:'',age:''});
+  
 
   //fetching posts using server-action
 
@@ -49,16 +53,23 @@ export default function Home() {
     }
   };
 
+
+  //handling onChange
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const {name, value} = e.target;
+    setFormInfo((prev)=>({
+      ...prev,
+      [name]: value,
+    }));
+    console.log(formInfo);
+  }
+
   //creating new post using server-action
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-    const postData = { title, detail, author, age };
-    await createPosts(postData);
-    setTitle("");
-    setDetail("");
-    setAuthor("");
-    setAge("");
+    await createPosts(formInfo);
+    setFormInfo({title:'',detail:'',author:'',age:''});
     await fetchData();
     } catch {
       setError("Failed to create post");
@@ -106,16 +117,16 @@ export default function Home() {
             name="title"
             placeholder="Title here"
             className="w-72 p-2 h-10"
-            value={title}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
+            value={formInfo.title}
+            onChange={handleChange}
           />
           <input
             type="text"
-            name="description"
+            name="detail"
             placeholder="Description"
             className="w-72 p-2 h-10"
-            value={detail}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setDetail(e.target.value)}
+            value={formInfo.detail}
+            onChange={handleChange}
           />
         </div>
         <div className="space-x-7">
@@ -124,16 +135,16 @@ export default function Home() {
             name="author"
             placeholder="Author name"
             className="w-72 p-2 h-10"
-            value={author}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setAuthor(e.target.value)}
+            value={formInfo.author}
+            onChange={handleChange}
           />
           <input
             type="text"
             name="age"
             placeholder="Author age"
             className="w-72 p-2 h-10"
-            value={age}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setAge(e.target.value)}
+            value={formInfo.age}
+            onChange={handleChange}
           />
         </div>
         <button className="bg-cyan-600 text-white py-2 px-3 mt-3" type="submit">

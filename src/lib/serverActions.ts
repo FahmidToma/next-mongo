@@ -39,11 +39,16 @@ export async function getFolders() {
 // for creating posts
 export async function createPosts(data: { title: string, detail: string, author: string, age: string }) {
 
-    await dbConnect();
-    const newPost = await Posts.create(data);
-    const createPost = JSON.parse(JSON.stringify(newPost));
-    console.log(createPost);
-    return createPost;
+    try{
+        await dbConnect();
+        const newPost = await Posts.create(data);
+        const createPost = JSON.parse(JSON.stringify(newPost));
+        console.log(createPost);
+        return createPost;
+    } catch (error) {
+        console.error("Error found",error);
+        throw new Error("Failed to create post");
+    } 
 
 }
 
