@@ -3,24 +3,17 @@ import dbConnect from '../../../../lib/db';
 import Posts from '../../../../model/posts';
 
 
-export async function GET(req:Request, {params}:{params: {id: string }}) {
+export async function GET(req:Request, {params}:{params: Promise<{id: string }>}) {
 
     const {id} = await params;
 
     try {
-      console.log('Testing database connection...');
-      await dbConnect();
-      console.log('Database connected successfully.');
-  
+      await dbConnect(); 
       const post = await Posts.findById(id);
-      console.log('Fetched posts:', post);
-  
       return new Response(JSON.stringify({ post }), { status: 200 });
     } catch (error) {
       let errorMessage = 'An unknown error occurred';
-  
       if (error instanceof Error) {
-        console.error('Database connection error:', error.message);
         errorMessage = error.message; // Safely extract the error message
       } else {
         console.error('Unknown error connecting database');
@@ -30,16 +23,11 @@ export async function GET(req:Request, {params}:{params: {id: string }}) {
     }
   }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-    const { id } =  params; // Get the ID from the URL
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params; // Get the ID from the URL
     try {
-        // Connect to the database
         await dbConnect();
-
         const updatedData = await req.json();
-        console.log('Update data:', updatedData);
-
-        // Find the post by ID and update it
         const updatedPost = await Posts.findByIdAndUpdate(id, updatedData, {new: true, runValidators: true, });
 
         if (!updatedPost) {
@@ -54,13 +42,10 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 }
 
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
-    const { id } = params; // Get the ID from the URL
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+    const { id } =  await params; // Get the ID from the URL
     try {
-        // Connect to the database
-        await dbConnect();
-
-        // Find and delete the post by ID
+        await dbConnect();  
         const deletedPost = await Posts.findByIdAndDelete(id);
 
         if (!deletedPost) {

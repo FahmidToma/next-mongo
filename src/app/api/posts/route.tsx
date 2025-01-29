@@ -4,20 +4,13 @@ import { NextRequest } from "next/server";
 
 export async function GET() {
     try {
-      console.log('Testing database connection...');
       await dbConnect();
-      console.log('Database connected successfully.');
-  
       const posts = await Posts.find();
-      console.log('Fetched posts:', posts);
-  
       return new Response(JSON.stringify({ posts }), { status: 200 });
     } catch (error) {
-      let errorMessage = 'An unknown error occurred';
-  
+      const errorMessage = 'An unknown error occurred';
       if (error instanceof Error) {
         console.error('Database connection error:', error.message);
-        errorMessage = error.message; // Safely extract the error message
       } else {
         console.error('Unknown error connecting database');
       }
